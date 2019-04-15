@@ -23,7 +23,7 @@ RSpec.describe 'Baker Profile Page', type: :feature do
 
   context 'when I am logged in and visit my profile page' do
     it 'shows all of my recipes and their info, along with a link to edit or delete' do
-      save_and_open_page
+      
       within "#recipe-#{@cookies.id}" do
         expect(page).to have_content(@cookies.name)
         expect(page).to have_content("Bake Time: #{@cookies.bake_time}")
