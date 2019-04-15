@@ -1,0 +1,16 @@
+<h1>Baker Show Page - <%= @baker.name %></h1>
+<p><%= link_to "Add Recipe", new_baker_recipe_path(@baker) %></p>
+
+<% @baker.recipes.each do |recipe| %>
+
+<section id="recipe-<%= recipe.id %>">
+  <h3><%= recipe.name %></h3>
+  <p>Bake Time: <%= recipe.bake_time %></p>
+  <p>Oven Temp: <%= recipe.oven_temp %></p><br>
+
+  <p><%= link_to "Ingredients", baker_recipe_ingredients_path(@baker, recipe) %></p>
+  <p><%= link_to "Edit", edit_baker_recipe_path(@baker, recipe) %></p>
+  <p><%= link_to "Delete", baker_recipe_path(@baker, recipe), method: :delete %></p>
+
+</section>
+<% end %>

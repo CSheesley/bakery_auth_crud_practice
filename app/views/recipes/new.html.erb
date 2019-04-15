@@ -1,0 +1,17 @@
+<h1>Add New Recipe Form</h1>
+
+<%= form_for [@baker, @recipe] do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :bake_time, "Bake Time" %>
+    <%= f.text_field :bake_time %>
+  </p>
+  <p>
+    <%= f.label :oven_temp, "Oven Temp" %>
+    <%= f.text_field :oven_temp %>
+  </p>
+  <%= f.submit "Submit" %>
+  <% end %>
